@@ -10,3 +10,9 @@ Yaml was chosen since it's both human readable and can describe complex nested d
 * Semi/Fully automated - since playbook in the incident response world often must have some manual steps, but sometimes can be fully automated.
 * Visibility - give the organization members (SOC team , managment) an overview on the incident response process.
 
+
+Playbook Hierarchy structure:
+1. Playbook - the high level process.
+2. Task - this is a single step in the process, can represent a script execution or manual step.
+
+
