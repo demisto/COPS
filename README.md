@@ -10,6 +10,8 @@ Yaml was chosen since it's both human readable and can describe complex nested d
 * Semi/Fully automated - since playbook in the incident response world often must have some manual steps, but sometimes can be fully automated.
 * Visibility - give the organization members (SOC team, management) an overview on the incident response process.
 
+## Version
+This is version 0.1 of the spec
 
 ## Playbook Hierarchy structure:
 1. Playbook - the high level process.
@@ -79,5 +81,7 @@ tasks:
     istitletask: true
 ```
 
-This is of course a sample(and simple example) just to show an overview of the scheme.
+This is of course a sample (and simple example) just to show an overview of the scheme.
 For real DFIR playbooks look at the Demisto content repo.
+
+Feel free to contribute by providing feedback, creating new DFIR playbooks, or using the spec in your security product, contact using issues of this GitHub repo.
