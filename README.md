@@ -33,7 +33,7 @@ Yaml was chosen since it's both human readable and can describe complex nested d
 * scriptarguments: these are the task inputs, should be a map of string (input name) to array (input value or identifier)
 * results: script results that we can propagate to the rest of the playbook execution
 
-Example playbook Yaml:
+### Example playbook Yaml:
 
 ``` yaml
 id: ca1822c4-6208-41b3-81c5-ca1e11a48901
