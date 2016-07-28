@@ -3,7 +3,7 @@
 This repository contains schema definitions for a DFIR (Digital Forensics Incident Response) Playbook.
 The scheme is based on YAML (http://yaml.org/), this is inorder to describe an Incident response runbook (aka. playbook, “use case”) is a written guidance for identifying, containing, eradicating and recovering from cyber security incidents.
 
-Yaml was chosen since it's both human readable and can describe complex nested data structure.
+Yaml was chosen since it's both human readable and can describe complex nested data structure, we use YAML version 1.2.
 
 ## What is the promise of the DFIR Playbook Spec?
 * **Open** - open sourced, so analysts can create, share and contribute incident response process in same language.
