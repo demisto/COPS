@@ -33,5 +33,51 @@ Yaml was chosen since it's both human readable and can describe complex nested d
 * scriptarguments: these are the task inputs, should be a map of string(input name) to string(input value or identifier)
 * results: script results that we can propagate to the rest of the playbook execution
 
+Example playbook Yaml:
 
+``` yaml
+id: ca1822c4-6208-41b3-81c5-ca1e11a48901
+version: 3
+name: HelloWorld-Playbook
+description: Just a hello world example playbook
+tasks:
+- id: "1"
+  taskid: 6121dfe5-1d26-4fb5-84b2-c03b71c14fb3
+  type: condition
+  task:
+    id: 6121dfe5-1d26-4fb5-84b2-c03b71c14fb3
+    version: 1
+    name: Are you a DFIR lover?
+    description: This will decide the print msg according to person
+    script: IsDFIRPerson
+  condition:
+    "No":
+    - id: "2"
+      taskid: 9418fbce-5113-4e7e-8747-c6f0f75fd9f7
+      type: regular
+      task:
+        id: 9418fbce-5113-4e7e-8747-c6f0f75fd9f7
+        name: manual task
+        description: Write hello world using a pen
+    "Yes":
+    - id: "3"
+      taskid: 04b38429-d8b8-4dc3-866a-bddec43580c5
+      type: regular
+      task:
+        id: 04b38429-d8b8-4dc3-866a-bddec43580c5
+        name: Hello
+        description: Print Hello DFIR !
+        script: print
+      scriptarguments:
+        msg: Hello DFIR !
+- id: "4"
+  taskid: a06f606e-ef14-4f8e-8ad8-f1d6e6caab84
+  type: title
+  task:
+    id: a06f606e-ef14-4f8e-8ad8-f1d6e6caab84
+    name: End of Playbook
+    istitletask: true
+```
 
+This is of course a sample(and simple example) just to show an overview of the scheme.
+For real DFIR playbooks look at the Demisto content repo.
