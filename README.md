@@ -77,7 +77,6 @@ tasks:
   task:
     id: a06f606e-ef14-4f8e-8ad8-f1d6e6caab84
     name: End of Playbook
-    istitletask: true
 ```
 
 This is of course a sample (and simple example) just to show an overview of the scheme.
