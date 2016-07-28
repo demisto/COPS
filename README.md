@@ -6,9 +6,9 @@ The scheme is based on YAML (http://yaml.org/), this is inorder to describe an I
 Yaml was chosen since it's both human readable and can describe complex nested data structure.
 
 ## What is the promise of the DFIR Playbook Spec?
-* Open - open sourced, so analysts can create, share and contribute incident response process in same language.
-* Semi/Fully automated - since playbook in the incident response world often must have some manual steps, but sometimes can be fully automated.
-* Visibility - give the organization members (SOC team, management) an overview on the incident response process.
+* **Open** - open sourced, so analysts can create, share and contribute incident response process in same language.
+* **Semi/Fully automated** - since playbook in the incident response world often must have some manual steps, but sometimes can be fully automated.
+* **Visibility** - give the organization members (SOC team, management) an overview on the incident response process.
 
 ## Version
 This is version 0.1 of the spec
