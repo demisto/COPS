@@ -19,27 +19,27 @@ This is version 0.1 of the spec
 
 ## Playbook fields
 
-* id: a unique id of the playbook, usually UUID
-* name: playbook name
-* description: the purpose of the playbook
-* tasks: an (orderd) list of playbook tasks
+* **id**: a unique id of the playbook, usually UUID
+* **name**: playbook name
+* **description**: the purpose of the playbook
+* **tasks**: an (orderd) list of playbook tasks
 
 ## Task fields
-* id: this is the id of the task inside the playbook, it must by unique in playbook level only
-* taskid: this is the global task id, should be unique globally (usually UUID), needed in order to share task between playbooks * type: one of the three title (represent a new playbook section/header), regular (script or manual task) or condition (to decide what is the next branch/step)
-* name: name of the task
-* description: the purpose of the task
-* script: if this is an automated task, the script to execute for this task
-* tags: general tags to add to task
-* condition: if this task is condition type, this fields will hold a nested map of string keys that map to branch's (list of tasks), so this task can continue to correct branch according to result of script
-* scriptarguments: these are the task inputs, should be a map of string (input name) to array (input value or identifier)
-* results: script results that we can propagate to the rest of the playbook execution
+* **id**: this is the id of the task inside the playbook, it must by unique in playbook level only
+* **taskid**: this is the global task id, should be unique globally (usually UUID), needed in order to share task between playbooks 
+* **type**: one of the three title (represent a new playbook section/header), regular (script or manual task) or condition (to decide what is the next branch/step)
+* **name**: name of the task
+* **description**: the purpose of the task
+* **script**: if this is an automated task, the script to execute for this task
+* **tags**: general tags to add to task
+* **condition**: if this task is condition type, this fields will hold a nested map of string keys that map to branch's (list of tasks), so this task can continue to correct branch according to result of script
+* **scriptarguments**: these are the task inputs, should be a map of string (input name) to array (input value or identifier)
+* **results**: script results that we can propagate to the rest of the playbook execution
 
 ### Example playbook Yaml:
 
 ``` yaml
 id: ca1822c4-6208-41b3-81c5-ca1e11a48901
-version: 3
 name: HelloWorld-Playbook
 description: Just a hello world example playbook
 tasks:
@@ -48,7 +48,6 @@ tasks:
   type: condition
   task:
     id: 6121dfe5-1d26-4fb5-84b2-c03b71c14fb3
-    version: 1
     name: Are you a DFIR lover?
     description: This will decide the print msg according to person
     script: IsDFIRPerson
