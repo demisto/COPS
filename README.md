@@ -71,6 +71,8 @@ tasks:
         script: print
       scriptarguments:
         msg: Hello DFIR !
+      results:
+      - printOutput  
 - id: "4"
   taskid: a06f606e-ef14-4f8e-8ad8-f1d6e6caab84
   type: title
