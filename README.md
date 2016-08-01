@@ -1,4 +1,4 @@
-# DFIR Playbook Spec
+# COPS - Collaborative Open Playbook Standard
 
 This repository contains schema definitions for a DFIR (Digital Forensics Incident Response) Playbook.
 The scheme is based on YAML (http://yaml.org/), this is inorder to describe an Incident response runbook (aka. playbook, “use case”) is a written guidance for identifying, containing, eradicating and recovering from cyber security incidents.
