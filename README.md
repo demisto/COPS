@@ -1,7 +1,7 @@
 # COPS - Collaborative Open Playbook Standard
 
 This repository contains schema definitions for a DFIR (Digital Forensics Incident Response) Playbook.
-The scheme is based on YAML (http://yaml.org/), this is inorder to describe an Incident response runbook (aka. playbook, “use case”) is a written guidance for identifying, containing, eradicating and recovering from cyber security incidents.
+The scheme is based on YAML (http://yaml.org/), and describes an incident response runbook (aka. playbook, “use case”) that is a written guidance for identifying, containing, eradicating and recovering from cyber security incidents.
 
 Yaml was chosen since it's both human readable and can describe complex nested data structure, we use YAML version 1.2.
 
@@ -26,7 +26,7 @@ This is version 0.1 of the spec
 
 ## Task fields
 * **id**: this is the id of the task inside the playbook, it must by unique in playbook level only
-* **taskid**: this is the global task id, should be unique globally (usually UUID), needed in order to share task between playbooks 
+* **taskid**: this is the global task id, should be unique globally (usually UUID), needed in order to share task between playbooks
 * **type**: one of the three title (represent a new playbook section/header), regular (script or manual task) or condition (to decide what is the next branch/step)
 * **name**: name of the task
 * **description**: the purpose of the task
@@ -72,7 +72,7 @@ tasks:
       scriptarguments:
         msg: Hello DFIR !
       results:
-      - printOutput  
+      - printOutput
 - id: "4"
   taskid: a06f606e-ef14-4f8e-8ad8-f1d6e6caab84
   type: title
