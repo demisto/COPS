@@ -82,6 +82,6 @@ tasks:
 ```
 
 This is of course a sample (and simple example) just to show an overview of the scheme.
-For real DFIR playbooks look at the Demisto content repo.
+For real DFIR playbooks look at the [Demisto content repo](https://github.com/demisto/content).
 
 Feel free to contribute by providing feedback, creating new DFIR playbooks, or using the spec in your security product, contact using issues of this GitHub repo.
