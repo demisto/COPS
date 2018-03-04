@@ -145,11 +145,11 @@ outputs: []
 ```
 
 ### Example playbook task by task explanation 
-* **0**: This is the playbok first task, just dummy task to hold start point of playbook
-* **1**: Hello world COPS - print/echo "Hello DFIR community, this is COPS!"
-* **2**: Is this incident high severity - condition task to check if incident severity high, if so go to task #3, otherwise go to task #4
-* **3**: Investigate it! - manual task the anylst needs to preform 
-* **4**: Go Sleep - manual task the anylst needs to preform 
+0. This is the playbok first task, just dummy task to hold start point of playbook
+1. Hello world COPS - print/echo "Hello DFIR community, this is COPS!"
+2. Is this incident high severity - condition task to check if incident severity high, if so go to task #3, otherwise go to task #4
+3. Investigate it! - manual task the anylst needs to preform 
+4. Go Sleep - manual task the anylst needs to preform 
 
 ------
 
