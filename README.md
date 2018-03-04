@@ -7,7 +7,7 @@ Yaml was chosen since it's both human readable and can describe complex nested d
 
 ## What is the promise of the DFIR Playbook Spec?
 * **Open** - open sourced, so analysts can create, share and contribute incident response process in same language.
-* **Semi/Fully automated** - since playbook in the incident response world often must have some manual steps, but sometimes can be fully automated.
+* **Semi/Fully automated** - since playbooks in the incident response world can often be fully automated, but sometimes must include some manual steps.
 * **Visibility** - give the organization members (SOC team, management) an overview on the incident response process.
 
 ## Version
@@ -15,29 +15,29 @@ This is version 0.2 of the spec
 
 ## Playbook Hierarchy structure:
 1. Playbook - the high level process.
-2. Task - this is a single step in the process, can represent a script execution or manual step.
+2. Task - this is a single step in the process, which can represent a script execution or manual step.
 
 ## Playbook fields
 
 * **id**: a unique id of the playbook, usually UUID
 * **name**: playbook name
 * **description**: the purpose of the playbook
-* **tasks**: an (orderd) list of playbook tasks
+* **tasks**: an (ordered) list of playbook tasks
 * **starttaskid**: the id of the playbook first task
 * **inputs**: a list of playbook inputs
 * **outputs**: a list of playbook outputs
 
 ## Task fields
 * **id**: this is the id of the task inside the playbook, it must by unique in playbook level only
-* **taskid**: this is the global task id, should be unique globally (usually UUID), needed in order to share task between playbooks
-* **type**: one of the three title (represent a new playbook section/header), regular (script or manual task) or condition (to decide what is the next branch/step)
+* **taskid**: this is the global task id, should be unique globally (usually UUID), needed in order to share a task between playbooks
+* **type**: one of the following: title (represent a new playbook section/header), regular (script or manual task) or condition (to decide what is the next branch/step)
 * **name**: name of the task
 * **description**: the purpose of the task
 * **scriptName**: if this is an automated task, the script to execute for this task
 * **tags**: general tags to add to task
-* **condition**: if this task is condition type, this fields will hold a nested map of string keys that map to branch's (list of tasks), so this task can continue to correct branch according to result of script
+* **condition**: if this task is a condition type, this fields will hold a nested map of string keys that map to the branch's (list of tasks), so that this task can continue to the correct branch according to result of script
 * **scriptarguments**: these are the task inputs, can be simple or complex type, each has different inner stracture 
-* **nexttasks**: the navigation to preform after current task has ended,to which next task id to move
+* **nexttasks**: the navigation to perform after the current task has ended,to which next task id to move
 * **conditions**: the navigation logic conditions, based on the result the next task will be selected
 
 ### Example playbook Yaml:
