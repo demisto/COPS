@@ -11,7 +11,7 @@ Yaml was chosen since it's both human readable and can describe complex nested d
 * **Visibility** - give the organization members (SOC team, management) an overview on the incident response process.
 
 ## Version
-This is version 0.1 of the spec
+This is version 0.2 of the spec
 
 ## Playbook Hierarchy structure:
 1. Playbook - the high level process.
@@ -23,6 +23,9 @@ This is version 0.1 of the spec
 * **name**: playbook name
 * **description**: the purpose of the playbook
 * **tasks**: an (orderd) list of playbook tasks
+* **starttaskid**: the id of the playbook first task
+* **inputs**: a list of playbook inputs
+* **outputs**: a list of playbook outputs
 
 ## Task fields
 * **id**: this is the id of the task inside the playbook, it must by unique in playbook level only
@@ -30,18 +33,20 @@ This is version 0.1 of the spec
 * **type**: one of the three title (represent a new playbook section/header), regular (script or manual task) or condition (to decide what is the next branch/step)
 * **name**: name of the task
 * **description**: the purpose of the task
-* **script**: if this is an automated task, the script to execute for this task
+* **scriptName**: if this is an automated task, the script to execute for this task
 * **tags**: general tags to add to task
 * **condition**: if this task is condition type, this fields will hold a nested map of string keys that map to branch's (list of tasks), so this task can continue to correct branch according to result of script
-* **scriptarguments**: these are the task inputs, should be a map of string (input name) to array (input value or identifier)
-* **results**: script results that we can propagate to the rest of the playbook execution
+* **scriptarguments**: these are the task inputs, can be simple or complex type, each has different inner stracture 
+* **nexttasks**: the navigation to preform after current task has ended,to which next task id to move
+* **conditions**: the navigation logic conditions, based on the result the next task will be selected
 
 ### Example playbook Yaml:
 
 ``` yaml
 id: 40202fbb-9ed4-4b8f-86e1-68722d808e3d
-version: 3
+version: 0
 name: Hello-world-COPS
+description: This playbook is an example hello world of COPS format
 starttaskid: "0"
 tasks:
   "0":
@@ -137,7 +142,14 @@ inputs: []
 outputs: []
 ```
 
+### Playbook task by task explanation 
+* **0**: This is the playbok first task, just dummy task to hold start point of playbook
+* **1**: Hello world COPS - print/echo "Hello DFIR community, this is COPS!"
+* **2**: Is this incident high severity - condition task to check if incident severity high, if so go to task #3, otherwise go to task #4
+* **3**: Investigate it! - manual task the anylst needs to preform 
+* **4**: Go Sleep - manual task the anylst needs to preform 
+
 This is of course a sample (and simple example) just to show an overview of the scheme.
-For real DFIR playbooks look at the [Demisto content repo](https://github.com/demisto/content).
+For real DFIR playbooks look at the [Demisto content repo](https://github.com/demisto/content/tree/master/Playbooks).
 
 Feel free to contribute by providing feedback, creating new DFIR playbooks, or using the spec in your security product, contact using issues of this GitHub repo.
