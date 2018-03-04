@@ -39,46 +39,102 @@ This is version 0.1 of the spec
 ### Example playbook Yaml:
 
 ``` yaml
-id: ca1822c4-6208-41b3-81c5-ca1e11a48901
-name: HelloWorld-Playbook
-description: Just a hello world example playbook
+id: 40202fbb-9ed4-4b8f-86e1-68722d808e3d
+version: 3
+name: Hello-world-COPS
+starttaskid: "0"
 tasks:
-- id: "1"
-  taskid: 6121dfe5-1d26-4fb5-84b2-c03b71c14fb3
-  type: condition
-  task:
-    id: 6121dfe5-1d26-4fb5-84b2-c03b71c14fb3
-    name: Are you a DFIR lover?
-    description: This will decide the print msg according to person
-    script: IsDFIRPerson
-  condition:
-    "No":
-    - id: "2"
-      taskid: 9418fbce-5113-4e7e-8747-c6f0f75fd9f7
+  "0":
+    id: "0"
+    taskid: c44160b9-16d8-4a1e-8765-1c034006a183
+    type: start
+    task:
+      id: c44160b9-16d8-4a1e-8765-1c034006a183
+      version: -1
+      name: ""
+      iscommand: false
+      brand: ""
+    nexttasks:
+      '#none#':
+      - "1"
+    separatecontext: false
+  "1":
+    id: "1"
+    taskid: 015bd0d8-5d01-4c2d-8d38-fed3e5c77938
+    type: regular
+    task:
+      id: 015bd0d8-5d01-4c2d-8d38-fed3e5c77938
+      version: -1
+      name: Hello world COPS
+      scriptName: Print
       type: regular
-      task:
-        id: 9418fbce-5113-4e7e-8747-c6f0f75fd9f7
-        name: manual task
-        description: Write hello world using a pen
-    "Yes":
-    - id: "3"
-      taskid: 04b38429-d8b8-4dc3-866a-bddec43580c5
+      iscommand: false
+      brand: ""
+    nexttasks:
+      '#none#':
+      - "2"
+    scriptarguments:
+      value:
+        simple: Hello DFIR community, this is COPS!
+    separatecontext: false
+  "2":
+    id: "2"
+    taskid: b8193b45-293e-4035-858a-36d84050395a
+    type: condition
+    task:
+      id: b8193b45-293e-4035-858a-36d84050395a
+      version: -1
+      name: Is this incident high severity
+      type: condition
+      iscommand: false
+      brand: ""
+    nexttasks:
+      '#default#':
+      - "4"
+      "yes":
+      - "3"
+    separatecontext: false
+    conditions:
+    - label: "yes"
+      condition:
+      - - operator: string.isEqual
+          left:
+            value:
+              simple: incident.severity
+            iscontext: true
+          right:
+            value:
+              simple: "3"
+  "3":
+    id: "3"
+    taskid: 11e43d6c-a9bb-4fea-8641-6f256a5d11f7
+    type: regular
+    task:
+      id: 11e43d6c-a9bb-4fea-8641-6f256a5d11f7
+      version: -1
+      name: Investigate it!
       type: regular
-      task:
-        id: 04b38429-d8b8-4dc3-866a-bddec43580c5
-        name: Hello
-        description: Print Hello DFIR !
-        script: print
-      scriptarguments:
-        msg: Hello DFIR !
-      results:
-      - printOutput
-- id: "4"
-  taskid: a06f606e-ef14-4f8e-8ad8-f1d6e6caab84
-  type: title
-  task:
-    id: a06f606e-ef14-4f8e-8ad8-f1d6e6caab84
-    name: End of Playbook
+      iscommand: false
+      brand: ""
+    separatecontext: false
+    sla:
+      hours: 0
+      days: 0
+      weeks: 1
+  "4":
+    id: "4"
+    taskid: eb04267c-b749-40f7-888b-b00c720112ea
+    type: regular
+    task:
+      id: eb04267c-b749-40f7-888b-b00c720112ea
+      version: -1
+      name: Go Sleep
+      type: regular
+      iscommand: false
+      brand: ""
+    separatecontext: false
+inputs: []
+outputs: []
 ```
 
 This is of course a sample (and simple example) just to show an overview of the scheme.
