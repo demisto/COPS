@@ -80,6 +80,7 @@ tasks:
     id: a06f606e-ef14-4f8e-8ad8-f1d6e6caab84
     name: End of Playbook
 ```
+![Example Playbook Image](/images/example-playbook.png)
 
 This is of course a sample (and simple example) just to show an overview of the scheme.
 For real DFIR playbooks look at the [Demisto content repo](https://github.com/demisto/content).
