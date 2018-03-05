@@ -144,6 +144,9 @@ inputs: []
 outputs: []
 ```
 
+### Example playbook illustration:
+![COPS logo](/images/Hello-world-COPS.png)
+
 ### Example playbook task by task explanation 
 0. This is the playbok first task, just dummy task to hold start point of playbook
 1. Hello world COPS - print/echo "Hello DFIR community, this is COPS!"
