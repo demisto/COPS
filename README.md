@@ -38,7 +38,7 @@ This is version 0.2 of the spec
 * **scriptName**: if this is an automated task, the script to execute for this task
 * **tags**: general tags to add to task
 * **condition**: if this task is a condition type, this fields will hold a nested map of string keys that map to the branch's (list of tasks), so that this task can continue to the correct branch according to result of script
-* **scriptarguments**: these are the task inputs, can be simple or complex type, each has different inner stracture 
+* **scriptarguments**: these are the task inputs, can be simple or complex type, each has different inner structure
 * **nexttasks**: the navigation to perform after the current task has ended,to which next task id to move
 * **conditions**: the navigation logic conditions, based on the result the next task will be selected
 
@@ -148,11 +148,11 @@ outputs: []
 ![COPS logo](/images/Hello-world-COPS.png)
 
 ### Example playbook task by task explanation 
-0. This is the playbok first task, just dummy task to hold start point of playbook
+0. This is the playbook first task, just dummy task to hold start point of playbook
 1. Hello world COPS - print/echo "Hello DFIR community, this is COPS!"
 2. Is this incident high severity - condition task to check if incident severity high, if so go to task #3, otherwise go to task #4
-3. Investigate it! - manual task the anylst needs to preform 
-4. Go Sleep - manual task the anylst needs to preform 
+3. Investigate it! - manual task the analyst needs to preform
+4. Go Sleep - manual task the analyst needs to preform
 
 ------
 
